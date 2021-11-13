@@ -2,10 +2,8 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const urlSchema = new Schema({
-  name: {
-    type: String,
-    required: true
-  }
+  random_url: { type: String, required: true },
+  original_url: { type: String, required: true }
 })
 
 module.exports = mongoose.model('Url', urlSchema)
