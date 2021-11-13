@@ -17,9 +17,9 @@ router.get('/:id', (req, res) => {
   const id = req.params.id
   const { original_url } = req.body
 
-  return Url.find({ random_url: id })
+  return Url.findOne({ random_url: id })
     .lean()
-    .then(data => res.redirect(data[0].original_url))
+    .then(urls => res.redirect(urls.original_url))
     .catch(error => console.log(error))
 })
 
