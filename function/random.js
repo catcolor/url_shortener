@@ -19,4 +19,4 @@ function randomNumber() {
   return random
 }
 
-module.exports = randomNumber()
+module.exports = randomNumber

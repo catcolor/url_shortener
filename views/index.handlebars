@@ -1,8 +1,12 @@
 <form action="/new" method="POST">
   <div class="form-group">
-    <label for="original_url"></label>
-    <input type="text" class="form-control mt-3 w-75 mx-auto" id="original_url" name="original_url"
-      placeholder="input URL here" required>
+    <label></label>
+    <input type="text" class="form-control mt-3 w-75 mx-auto" name="original_url" placeholder="input URL here" required>
   </div>
+  {{#if invalid_url }}
+  <h5 class="text-danger">
+    URL it is invalid
+  </h5>
+  {{/if}}
   <button type="submit" class="btn btn-outline-primary w-25 mb-3">Shorten</button>
 </form>
