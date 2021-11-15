@@ -28,3 +28,4 @@
 * Express-handlebars 5.3.4
 * Boostrap 4.2.1
 * Mongoose 6.0.12
+* is-url 1.2.4
