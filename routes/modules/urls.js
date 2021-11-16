@@ -24,7 +24,15 @@ router.get('/:id', (req, res) => {
 
   Url.findOne({ random_url: id })
     .lean()
-    .then(data => res.redirect(data.original_url))
+    .then(data => {
+      if (!data) {
+        return res.render('error', {
+          errorMsg: "Can't found the URL",
+          errorUrl: 'http://localhost:3000/' + id
+        })
+      }
+      res.redirect(data.original_url)
+    })
     .catch(error => console.log(error))
 })
 
